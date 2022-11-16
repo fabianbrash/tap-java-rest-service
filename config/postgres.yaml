@@ -2,6 +2,7 @@ apiVersion: sql.tanzu.vmware.com/v1
 kind: Postgres
 metadata:
   name: customer-profile-database
+  namespace: java
 spec:
   memory: 800Mi
   cpu: "0.8"
