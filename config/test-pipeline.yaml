@@ -4,6 +4,7 @@ metadata:
   name: customer-profile-test-pipeline
   labels:
     apps.tanzu.vmware.com/pipeline: test
+  namespace: java
 spec:
   params:
     - name: source-url
