@@ -6,6 +6,7 @@ metadata:
     apps.tanzu.vmware.com/workload-type: web
     app.kubernetes.io/part-of: customer-profile
     apps.tanzu.vmware.com/has-tests: true
+    apis.apps.tanzu.vmware.com/register-api: true
   namespace: java
 spec:
   serviceClaims:
@@ -22,6 +23,13 @@ spec:
     - name: annotations
       value:
         autoscaling.knative.dev/minScale: "1"
+        apps.tanzu.vmware.com/pipeline: test
+        apps.tanzu.vmware.com/language: java
+        type: openapi
+        location:
+          path: /api-docs
+        owner: team-java
+        description: "A set pf API endpoint to manage the resources with the customer-profile app."
   source:
     git:
       url: https://github.com/fabianbrash/tap-java-rest-service.git
